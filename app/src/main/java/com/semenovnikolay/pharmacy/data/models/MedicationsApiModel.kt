@@ -3,7 +3,7 @@ package com.semenovnikolay.pharmacy.data.models
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class PharmacyApiModel (
+data class MedicationsApiModel (
     @SerializedName("id") @Expose
     var id: Int? = null,
     @SerializedName("image") @Expose

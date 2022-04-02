@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "pharmacy_data_table")
-class PharmacyModel (
+class MedicationsModel (
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "pharmacy_id")

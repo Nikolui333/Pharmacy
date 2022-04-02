@@ -1,15 +1,15 @@
 package com.semenovnikolay.pharmacy.presentation.di
 
 import androidx.room.Room
-import com.semenovnikolay.pharmacy.data.dataSource.PharmacyApiDataSource
-import com.semenovnikolay.pharmacy.data.dataSource.PharmacyDataSource
-import com.semenovnikolay.pharmacy.data.dataSourceIMPL.PharmacyApiDataSourceIMPL
-import com.semenovnikolay.pharmacy.data.dataSourceIMPL.PharmacyDataSourceIMPL
-import com.semenovnikolay.pharmacy.data.localDB.PharmacyDB
-import com.semenovnikolay.pharmacy.data.repository.PharmacyRepository
-import com.semenovnikolay.pharmacy.domain.repository.PharmacyCall
-import com.semenovnikolay.pharmacy.domain.useCase.PharmacyUseCase
-import com.semenovnikolay.pharmacy.presentation.viewModel.PharmacyViewModel
+import com.semenovnikolay.pharmacy.data.dataSource.MedicationsApiDataSource
+import com.semenovnikolay.pharmacy.data.dataSource.MedicationsDataSource
+import com.semenovnikolay.pharmacy.data.dataSourceIMPL.MedicationsApiDataSourceIMPL
+import com.semenovnikolay.pharmacy.data.dataSourceIMPL.MedicationsDataSourceIMPL
+import com.semenovnikolay.pharmacy.data.localDB.MedicationsDB
+import com.semenovnikolay.pharmacy.data.repository.MedicationsRepository
+import com.semenovnikolay.pharmacy.domain.repository.MedicationsCall
+import com.semenovnikolay.pharmacy.domain.useCase.MedicationsUseCase
+import com.semenovnikolay.pharmacy.presentation.viewModel.MedicationsViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -17,29 +17,29 @@ import org.koin.dsl.module
 val medicines = module{
 
     single {
-        Room.databaseBuilder(androidContext(), PharmacyDB::class.java,
+        Room.databaseBuilder(androidContext(), MedicationsDB::class.java,
             "pharmacyDB").build()
     }
 
-    single { get<PharmacyDB>().pharmacyDao }
+    single { get<MedicationsDB>().medicationsDao }
 
 
-    single<PharmacyDataSource> {
-        PharmacyDataSourceIMPL(
+    single<MedicationsDataSource> {
+        MedicationsDataSourceIMPL(
             get()
         )
     }
 
-    single<PharmacyApiDataSource> {
-        PharmacyApiDataSourceIMPL(
+    single<MedicationsApiDataSource> {
+        MedicationsApiDataSourceIMPL(
             get()
         )
     }
 
-    single<PharmacyCall> { PharmacyRepository(get(),get()) }
+    single<MedicationsCall> { MedicationsRepository(get(),get()) }
 
-    single { PharmacyUseCase(get()) }
+    single { MedicationsUseCase(get()) }
 
-    viewModel { PharmacyViewModel(get()) }
+    viewModel { MedicationsViewModel(get()) }
 
 }

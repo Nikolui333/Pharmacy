@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/User/KotlinAndroidCours/Pharmacy/app/src/main/res/drawable-v24/delete.xml" value="0.187" />
+        <entry key="..\:/User/KotlinAndroidCours/Pharmacy/app/src/main/res/drawable/shopping_cart.xml" value="0.187" />
         <entry key="..\:/User/KotlinAndroidCours/Pharmacy/app/src/main/res/layout/activity_main.xml" value="0.152" />
         <entry key="..\:/User/KotlinAndroidCours/Pharmacy/app/src/main/res/menu/bottom_menu.xml" value="0.14375" />
       </map>

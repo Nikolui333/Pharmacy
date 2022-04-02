@@ -5,13 +5,13 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.semenovnikolay.pharmacy.R
 import com.semenovnikolay.pharmacy.databinding.ActivityMainBinding
-import com.semenovnikolay.pharmacy.presentation.viewModel.PharmacyViewModel
+import com.semenovnikolay.pharmacy.presentation.viewModel.MedicationsViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
 
     private var binding: ActivityMainBinding? = null
-    private val pharmacyViewModel: PharmacyViewModel by viewModel()
+    private val medicationsViewModel: MedicationsViewModel by viewModel()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        pharmacyViewModel.migration(this)
+        medicationsViewModel.migration(this)
 
         setSupportActionBar(binding?.topMainMenu)
 

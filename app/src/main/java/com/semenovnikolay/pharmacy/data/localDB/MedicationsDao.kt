@@ -5,15 +5,15 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.semenovnikolay.pharmacy.data.models.PharmacyModel
+import com.semenovnikolay.pharmacy.data.models.MedicationsModel
 
 @Dao
-interface PharmacyDao {
+interface MedicationsDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(pharmacyModel: PharmacyModel)
+    fun insert(medicationsModel: MedicationsModel)
 
     @Query("SELECT * FROM pharmacy_data_table")
-    fun loadMedicines(): LiveData<List<PharmacyModel>>
+    fun loadMedicines(): LiveData<List<MedicationsModel>>
 
     @Query("DELETE FROM pharmacy_data_table")
     suspend fun clear()
