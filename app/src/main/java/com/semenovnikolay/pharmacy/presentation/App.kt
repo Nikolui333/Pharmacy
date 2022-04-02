@@ -1,7 +1,10 @@
 package com.semenovnikolay.pharmacy.presentation
 
 import android.app.Application
+import com.semenovnikolay.pharmacy.presentation.di.card
 import com.semenovnikolay.pharmacy.presentation.di.medicines
+import com.semenovnikolay.pharmacy.presentation.di.order
+import com.semenovnikolay.pharmacy.presentation.di.orderApi
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -18,7 +21,7 @@ class App: Application() {
             //inject Android context
             androidContext(this@App)
 
-            modules(medicines/*, card, order, orderApi*/)
+            modules(medicines, card, order, orderApi)
 
         }
 

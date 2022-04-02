@@ -1,4 +1,4 @@
-package com.semenovnikolay.pharmacy.presentation
+package com.semenovnikolay.pharmacy.presentation.Tabs.Medications
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -33,28 +33,28 @@ class Medicine : Fragment() {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_medicine, container, false)
 
-        initRecyclerCoffee()
-        loadCoffee()
+        initRecyclerMedications()
+        loadMedicine()
 
         return binding?.root
     }
 
-    private fun initRecyclerCoffee() {
+    private fun initRecyclerMedications() {
 
         binding?.catalogMedications?.layoutManager =
             LinearLayoutManager(context)
         medicationsAdapter =
-            MedicationsAdapter ({ coffeeModel: MedicationsModel ->
+            MedicationsAdapter ({ medicationsModel: MedicationsModel ->
                 addToCard(
-                    coffeeModel
+                    medicationsModel
                 )
-            }, { coffeeModel: MedicationsModel ->
+            }, { medicationsModel: MedicationsModel ->
                 removeFromCard(
-                    coffeeModel
+                    medicationsModel
                 )
             }, { idProduct:Int, addToBasket: AppCompatImageButton,
                  removeFromBasket: AppCompatImageButton ->
-                loadCoffeeToCardFromCardProduct(
+                loadMedicineToCardFromCardProduct(
                     idProduct, addToBasket, removeFromBasket
                 )
             })
@@ -62,7 +62,7 @@ class Medicine : Fragment() {
 
     }
 
-    private fun loadCoffee() {
+    private fun loadMedicine() {
 
         medicationsViewModel.loadMedicines.observe(viewLifecycleOwner, Observer {
             medicationsAdapter?.setList(it)
@@ -72,20 +72,20 @@ class Medicine : Fragment() {
 
     }
 
-    private fun addToCard(coffeeModel: MedicationsModel) {
-        cardViewModel.startInsert(coffeeModel.name, coffeeModel.image, coffeeModel.price, coffeeModel.id.toString(),
+    private fun addToCard(medicationsModel: MedicationsModel) {
+        cardViewModel.startInsert(medicationsModel.name, medicationsModel.image, medicationsModel.price, medicationsModel.id.toString(),
             "1")
     }
 
-    private fun removeFromCard(coffeeModel: MedicationsModel) {
-        cardViewModel.deleteProductToCardFromCardProduct(coffeeModel.id.toString())
+    private fun removeFromCard(medicationsModel: MedicationsModel) {
+        cardViewModel.deleteProductToCardFromCardProduct(medicationsModel.id.toString())
     }
 
-    private fun loadCoffeeToCardFromCardProduct (idProduct:Int, addToBasket: AppCompatImageButton,
+    private fun loadMedicineToCardFromCardProduct (idProduct:Int, addToBasket: AppCompatImageButton,
                                                  removeFromBasket: AppCompatImageButton
     ){
 
-        cardViewModel.loadCoffeeToCardFromCardProduct(idProduct.toString()).observe(viewLifecycleOwner, Observer {
+        cardViewModel.loadMedicineToCardFromCardProduct(idProduct.toString()).observe(viewLifecycleOwner, Observer {
 
             val count = it.count()
 

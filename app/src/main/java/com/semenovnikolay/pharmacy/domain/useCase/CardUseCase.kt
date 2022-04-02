@@ -19,11 +19,11 @@ class CardUseCase (private val cardCall: CardCall) {
             cardCall.updateProductToCard(cardModel)}
     }
 
-    fun loadCoffeeFromCard(): LiveData<List<CardModel>> {
-        return cardCall.loadCoffeeFromCard()    }
+    fun loadMedicineFromCard(): LiveData<List<CardModel>> {
+        return cardCall.loadMedicineFromCard()    }
 
-    fun loadCoffeeToCardFromCardProduct(idProduct:String): LiveData<List<CardModel>> {
-        return cardCall.loadCoffeeToCardFromCardProduct(idProduct)    }
+    fun loadMedicineToCardFromCardProduct(idProduct:String): LiveData<List<CardModel>> {
+        return cardCall.loadMedicineToCardFromCardProduct(idProduct)    }
 
     suspend fun deleteProductFromCard(idProduct:Int) {
         CoroutineScope(Dispatchers.IO).launch {

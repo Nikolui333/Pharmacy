@@ -5,6 +5,10 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.semenovnikolay.pharmacy.R
 import com.semenovnikolay.pharmacy.databinding.ActivityMainBinding
+import com.semenovnikolay.pharmacy.presentation.Tabs.Account.Account
+import com.semenovnikolay.pharmacy.presentation.Tabs.Card.ShoppingCart
+import com.semenovnikolay.pharmacy.presentation.Tabs.Home
+import com.semenovnikolay.pharmacy.presentation.Tabs.Medications.Medicine
 import com.semenovnikolay.pharmacy.presentation.viewModel.MedicationsViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

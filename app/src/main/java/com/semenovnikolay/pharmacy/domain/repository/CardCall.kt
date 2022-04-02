@@ -10,9 +10,9 @@ interface CardCall {
 
     suspend fun updateProductToCard(cardModel: CardModel)
 
-    fun loadCoffeeFromCard(): LiveData<List<CardModel>>
+    fun loadMedicineFromCard(): LiveData<List<CardModel>>
 
-    fun loadCoffeeToCardFromCardProduct(idProduct:String): LiveData<List<CardModel>>
+    fun loadMedicineToCardFromCardProduct(idProduct:String): LiveData<List<CardModel>>
 
     suspend fun deleteProductFromCard(idProduct:Int)
 

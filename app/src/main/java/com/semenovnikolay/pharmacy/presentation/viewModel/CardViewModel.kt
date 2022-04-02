@@ -27,10 +27,10 @@ class CardViewModel (private val cardUseCase: CardUseCase): ViewModel() {
         cardUseCase.updateProductToCard(cardModel)
     }
 
-    val loadCoffeeFromCard = cardUseCase.loadCoffeeFromCard()
+    val loadMedicineFromCard = cardUseCase.loadMedicineFromCard()
 
-    fun loadCoffeeToCardFromCardProduct(idProduct:String): LiveData<List<CardModel>> {
-        return cardUseCase.loadCoffeeToCardFromCardProduct(idProduct)
+    fun loadMedicineToCardFromCardProduct(idProduct:String): LiveData<List<CardModel>> {
+        return cardUseCase.loadMedicineToCardFromCardProduct(idProduct)
     }
 
     fun deleteProductFromCard(idProduct:Int) = viewModelScope.launch{

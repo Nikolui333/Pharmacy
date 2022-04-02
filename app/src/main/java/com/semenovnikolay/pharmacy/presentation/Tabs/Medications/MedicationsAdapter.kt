@@ -1,4 +1,4 @@
-package com.semenovnikolay.pharmacy.presentation
+package com.semenovnikolay.pharmacy.presentation.Tabs.Medications
 
 import android.view.LayoutInflater
 import android.view.View
@@ -36,9 +36,9 @@ class MedicationsAdapter (private val addToCard:(MedicationsModel)->Unit, privat
 
     }
 
-    fun setList(coffeeList: List<MedicationsModel>) {
+    fun setList(medicationsList: List<MedicationsModel>) {
         medications.clear()
-        medications.addAll(coffeeList)
+        medications.addAll(medicationsList)
 
     }
 
@@ -46,30 +46,30 @@ class MedicationsAdapter (private val addToCard:(MedicationsModel)->Unit, privat
 
 
         fun bind(
-            coffeeModel: MedicationsModel, addToCard: (MedicationsModel) -> Unit,
+            medicationsModel: MedicationsModel, addToCard: (MedicationsModel) -> Unit,
             removeFromCard: (MedicationsModel) -> Unit,
-            loadCoffeeToCardFromCardProduct: (Int, AppCompatImageButton, AppCompatImageButton) -> Unit
+            loadMedicineToCardFromCardProduct: (Int, AppCompatImageButton, AppCompatImageButton) -> Unit
         ) {
 
-            val getImage = coffeeModel.image
+            val getImage = medicationsModel.image
             Picasso.get().load(getImage).into(binding.imageMedications)
-            binding.nameMedications.text = coffeeModel.name
-            binding.descriptionMedications.text = coffeeModel.description
-            binding.priceMedications.text = coffeeModel.price
+            binding.nameMedications.text = medicationsModel.name
+            binding.descriptionMedications.text = medicationsModel.description
+            binding.priceMedications.text = medicationsModel.price
 
             binding.addToCard.setOnClickListener(View.OnClickListener {
 
-                addToCard(coffeeModel)
+                addToCard(medicationsModel)
 
             })
 
             binding.removeFromCard.setOnClickListener(View.OnClickListener {
 
-                removeFromCard(coffeeModel)
+                removeFromCard(medicationsModel)
 
             })
 
-            loadCoffeeToCardFromCardProduct(coffeeModel.id, binding.addToCard, binding.removeFromCard)
+            loadMedicineToCardFromCardProduct(medicationsModel.id, binding.addToCard, binding.removeFromCard)
 
         }
 
