@@ -22,6 +22,7 @@ class Checkout : BottomSheetDialogFragment() {
     private var binding: CheckoutBinding? = null
     private val cardViewModel: CardViewModel by viewModel()
     private val orderLocalViewModel: OrderLocalViewModel by viewModel()
+    // viewModel, который отвечает за отправку данных на сервер
     private val orderApiViewModel: OrderApiViewModel by viewModel()
 
 
@@ -35,29 +36,29 @@ class Checkout : BottomSheetDialogFragment() {
         binding?.submitCheckout?.setOnClickListener(View.OnClickListener {
 
             cardViewModel.loadMedicineFromCard.observe(viewLifecycleOwner, Observer {
-
+                // сумма за весь заказ
                 val totalOrder:Int = it.sumOf<CardModel> { it.totalPrice.toInt() }
+                // заполнение данных для истории покупок                                                                    // joinToString нужно чтобы выводить массив без квадратных скобок
+                val descriptionOrder = it.map { it.name + ": count - " + it.count + ", price - " + it.totalPrice + " R; " }.joinToString("")
 
-                val descriptionOrder = it.map { it.name + ": count - " + it.count + ", price - " + it.totalPrice + " $; " }.joinToString("")
-
+                // запись данных в локальную базу данных
                 orderLocalViewModel.startInsert(binding?.enterNameCheckout?.text.toString(),
                     binding?.enterPhoneCheckout?.text.toString(), descriptionOrder,
                     totalOrder.toString() )
 
+                // отправка данных на сервер
                 orderApiViewModel.insert((context as FragmentActivity), binding?.enterNameCheckout?.text.toString(),
                     binding?.enterPhoneCheckout?.text.toString(), descriptionOrder,
                     totalOrder.toString())
 
-
+                // очистка текстовых полей
                 binding?.enterNameCheckout?.setText("")
                 binding?.enterPhoneCheckout?.setText("")
 
-
+                // закрытие всплывающей панели
                 dismiss()
-
+                // очистка корзины
                 cardViewModel.clearCard()
-
-
 
             })
 
@@ -66,9 +67,5 @@ class Checkout : BottomSheetDialogFragment() {
 
         return binding?.root
     }
-
-
-
-
 
 }

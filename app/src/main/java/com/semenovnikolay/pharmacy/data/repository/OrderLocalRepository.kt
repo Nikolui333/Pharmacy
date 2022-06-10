@@ -11,12 +11,11 @@ class OrderLocalRepository (private val orderLocalDao: OrderLocalDao
     override suspend fun insert(orderLocalModel: OrderLocalModel) {
         orderLocalDao.insert(orderLocalModel)    }
 
+    // получение данных о заказах
     override fun loadOrder(): LiveData<List<OrderLocalModel>> {
         return orderLocalDao.loadOrder()    }
 
     override suspend fun clear() {
         orderLocalDao.clear()    }
-
-
 
 }

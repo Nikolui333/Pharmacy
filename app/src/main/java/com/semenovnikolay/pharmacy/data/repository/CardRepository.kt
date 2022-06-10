@@ -19,6 +19,7 @@ class CardRepository (private val dao: CardDao): CardCall {
     override suspend fun insert(cardModel: CardModel) {
        dao.insert(cardModel)    }
 
+    // обновление информации о товаре, после изменения его количества
     override suspend fun updateProductToCard(cardModel: CardModel){
         dao.updateProductToCard(cardModel)
     }
@@ -29,11 +30,13 @@ class CardRepository (private val dao: CardDao): CardCall {
     override fun loadMedicineToCardFromCardProduct(idProduct:String): LiveData<List<CardModel>> {
         return dao.loadMedicineToCardFromCardProduct(idProduct)    }
 
+    // удаление товара из корзины
     override suspend fun deleteProductFromCard(idProduct:Int) {
         CoroutineScope(Dispatchers.IO).launch {
             dao.deleteProductFromCard(idProduct)}
     }
 
+    //  удаление товара из карточки товара
     override suspend fun deleteProductToCardFromCardProduct(idProduct:String) {
         CoroutineScope(Dispatchers.IO).launch {
             dao.deleteProductToCardFromCardProduct(idProduct)}
@@ -41,11 +44,4 @@ class CardRepository (private val dao: CardDao): CardCall {
 
     override suspend fun clear() {
         dao.clear()    }
-
-
-
-
-
-
-
 }

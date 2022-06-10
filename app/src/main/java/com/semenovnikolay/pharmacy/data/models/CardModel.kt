@@ -3,7 +3,7 @@ package com.semenovnikolay.pharmacy.data.models
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-
+// model - это класс, в котором храняться данные
 @Entity(tableName = "card_data_table")
 class CardModel (
 
@@ -19,13 +19,14 @@ class CardModel (
 
     @ColumnInfo(name = "card_price")
     val price:String,
-
+    // id товара, которое регулирует то, добавлен товар в корзину или нет
     @ColumnInfo(name = "card_idProduct")
     val idProduct:String,
-
+    // колличество единиц товара
     @ColumnInfo(name = "card_count")
     val count:String,
-
+    // итоговая цена
     @ColumnInfo(name = "card_total_price")
     val totalPrice:String
 )
+

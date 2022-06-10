@@ -9,6 +9,8 @@ import com.semenovnikolay.pharmacy.data.models.MedicationsModel
 
 @Dao
 interface MedicationsDao {
+
+    // записывает данные в локальную базу данных с сервера
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(medicationsModel: MedicationsModel)
 

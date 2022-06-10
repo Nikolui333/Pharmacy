@@ -10,6 +10,7 @@ import com.semenovnikolay.pharmacy.data.models.CardModel
 import com.semenovnikolay.pharmacy.databinding.CardItemBinding
 import com.squareup.picasso.Picasso
 
+                    // Unit эквивалентен void в Java
 class CardAdapter  (private val deleteFromCard:(CardModel)->Unit, private val lessCount:(CardModel)->Unit,
                     private val moreCount:(CardModel)->Unit):
     RecyclerView.Adapter<CardAdapter.CardHolder>() {
@@ -58,16 +59,16 @@ class CardAdapter  (private val deleteFromCard:(CardModel)->Unit, private val le
             binding.totalPriceProductCard.text = cardModel.totalPrice
 
             binding.removeFromCardProductCard.setOnClickListener(View.OnClickListener {
-                deleteFromCard(cardModel)
+                deleteFromCard(cardModel) // удаление из карточки, когда пользоваетль находится в корзине
             })
 
             binding.moreProductBasket.setOnClickListener(View.OnClickListener {
-                moreCount(cardModel)
+                moreCount(cardModel) //увеличить колличество единиц товара
 
             })
 
             binding.lessProductBasket.setOnClickListener(View.OnClickListener {
-                lessCount(cardModel)
+                lessCount(cardModel) // уменьшить колличество единиц товара
 
             })
 

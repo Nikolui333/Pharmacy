@@ -13,11 +13,11 @@ class MedicationsRepository (private val medicationsApiDataSource: MedicationsAp
 
    // val products = dao.loadPharmacy()
 
+    // загрузка данных из локальной базы данных
     override fun loadMedicines(): LiveData<List<MedicationsModel>> {
         return medicationsDataSource.loadMedicines()    }
 
-
-
+    // метод меграций
     override suspend fun startMigration(context: Context) {
         medicationsDataSource.clear()
         medicationsApiDataSource.startMigration(context)

@@ -7,7 +7,7 @@ import com.semenovnikolay.pharmacy.domain.useCase.OrderApiUseCase
 import kotlinx.coroutines.launch
 
 class OrderApiViewModel(private val orderApiUseCase: OrderApiUseCase): ViewModel() {
-
+    // отправка заказа на сервер
     fun insert(context:Context, name:String, phone:String, description:String, priceOrder:String) = viewModelScope.launch {
         orderApiUseCase.insert(context, name, phone, description, priceOrder)
 

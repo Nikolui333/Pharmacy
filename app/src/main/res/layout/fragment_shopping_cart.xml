@@ -75,10 +75,5 @@
                 android:text="@string/checkout"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
     </FrameLayout>
-
-
 </layout>

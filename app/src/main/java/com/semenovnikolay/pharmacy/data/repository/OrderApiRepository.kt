@@ -19,10 +19,10 @@ class OrderApiRepository: OrderApiCall {
             }
 
             override fun onFailure(call: Call<ResponseBody?>, t: Throwable) {
+                // если данные будут переданны неудачно, приложение попробует передать их ещё раз
                 insert(context, name, phone, description, priceOrder)
             }
         })
-
 
     }
 }

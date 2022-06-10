@@ -22,8 +22,6 @@ class ShoppingCart : Fragment(),View.OnClickListener {
     private var cardAdapter: CardAdapter? = null
     private val cardViewModel: CardViewModel by viewModel()
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,15 +29,19 @@ class ShoppingCart : Fragment(),View.OnClickListener {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shopping_cart, container, false)
 
+
         initRecyclerCard()
         loadMedicineFromCard()
 
+        // обработка нажатий по кнопке (очистка корзины)
         binding?.clearCard?.setOnClickListener(this)
+        // обработка нажатия по кнопке (оформление заказа)
         binding?.checkoutCard?.setOnClickListener(this)
 
         return binding?.root
     }
 
+    // инициализация
     private fun initRecyclerCard() {
 
         binding?.listCard?.layoutManager =
@@ -62,13 +64,16 @@ class ShoppingCart : Fragment(),View.OnClickListener {
 
     }
 
+    // загрузка всех товаров из корзины
     private fun loadMedicineFromCard() {
 
         cardViewModel.loadMedicineFromCard.observe(viewLifecycleOwner, Observer {
             cardAdapter?.setList(it)
             cardAdapter?.notifyDataSetChanged()
-
-            val total:Int = it.sumOf<CardModel> { it.totalPrice.toInt() }
+            // сложение суммарных стоимостей каждого товара (sumOf - суммировать всё)
+            val total:Int = it.sumOf<CardModel>
+            // суммировать поля totalPrice
+            { it.totalPrice.toInt() }
 
             binding?.totalOrder?.text = total.toString()
 
@@ -83,12 +88,14 @@ class ShoppingCart : Fragment(),View.OnClickListener {
         cardViewModel.deleteProductFromCard(cardModel.id)
     }
 
+    // обработка кликов по кнопкам
     override fun onClick(view: View) {
         when(view.id) {
+            // очистка корзины
             R.id.clearCard -> cardViewModel.clearCard()
-
+            // отправка заказа
             R.id.checkoutCard -> {
-
+                // запуск фрагмента (выезжающей панели) для ввода данных пользователя
                 val checkout = Checkout()
                 checkout.show((context as FragmentActivity).supportFragmentManager, "checkout")
 
@@ -96,12 +103,13 @@ class ShoppingCart : Fragment(),View.OnClickListener {
         }
     }
 
+    // уменьшение колличества единиц товара
     private fun lessCount(cardModel:CardModel) {
 
         var count: Int = cardModel.count.toInt()
         count--
 
-        if (count<1) {
+        if (count<1) { // если count<1 вывести 1
             cardViewModel.updateProductToCard(
                 CardModel(cardModel.id, cardModel.name,
                     cardModel.image, cardModel.price, cardModel.idProduct, "1",
@@ -114,23 +122,20 @@ class ShoppingCart : Fragment(),View.OnClickListener {
             cardViewModel.updateProductToCard(
                 CardModel(cardModel.id, cardModel.name,
                     cardModel.image, cardModel.price, cardModel.idProduct, count.toString(),
+                    // получение итоговой стоимости
                     (cardModel.price.toInt()*count).toString())
             )
 
         }
-
-
-
-
     }
 
+    // увеличение колличества единиц товара
     private fun moreCount(cardModel:CardModel) {
 
+        // получаем колличество товара
         var count: Int = cardModel.count.toInt()
         count++
-
-
-
+        
         cardViewModel.updateProductToCard(
             CardModel(cardModel.id, cardModel.name,
                 cardModel.image, cardModel.price, cardModel.idProduct, count.toString(),

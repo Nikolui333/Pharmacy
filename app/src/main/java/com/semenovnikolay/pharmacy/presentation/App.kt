@@ -17,6 +17,7 @@ class App: Application() {
 
         startKoin {
             // Koin Android logger
+            // в androidLogger задаётся то, насколько подробно нужно выводить оишбки
             androidLogger(Level.ERROR)
             //inject Android context
             androidContext(this@App)

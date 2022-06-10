@@ -3,6 +3,7 @@ package com.semenovnikolay.pharmacy.data.api
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+// private constructor запрещает создание экземпляра данного класса
 class ApiClient private constructor() {
 
     val api: ApiInterface
@@ -16,7 +17,8 @@ class ApiClient private constructor() {
                 .build()
 
     }
-
+    // аналог создания static в java
+    // переменные, объявленные внутри companion существуют только в одном экземпляре
     companion object {
 
         private val BASE_URL = "http://pharmacyserver.nikolyla.beget.tech/"
@@ -35,8 +37,6 @@ class ApiClient private constructor() {
 
                 return apiClient
 
-
             }
-
     }
 }

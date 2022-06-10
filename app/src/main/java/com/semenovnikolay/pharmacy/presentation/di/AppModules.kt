@@ -6,7 +6,6 @@ import com.semenovnikolay.pharmacy.data.dataSource.MedicationsDataSource
 import com.semenovnikolay.pharmacy.data.dataSourceIMPL.MedicationsApiDataSourceIMPL
 import com.semenovnikolay.pharmacy.data.dataSourceIMPL.MedicationsDataSourceIMPL
 import com.semenovnikolay.pharmacy.data.localDB.DataBasePharmacy
-import com.semenovnikolay.pharmacy.data.localDB.MedicationsDB
 import com.semenovnikolay.pharmacy.data.repository.CardRepository
 import com.semenovnikolay.pharmacy.data.repository.MedicationsRepository
 import com.semenovnikolay.pharmacy.data.repository.OrderApiRepository

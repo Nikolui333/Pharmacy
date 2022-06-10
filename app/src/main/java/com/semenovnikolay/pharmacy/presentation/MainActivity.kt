@@ -15,20 +15,24 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class MainActivity : AppCompatActivity() {
 
     private var binding: ActivityMainBinding? = null
-    private val medicationsViewModel: MedicationsViewModel by viewModel()
 
+    // ViewModel - класс, позволяющий Activity и фрагментам сохранять необходимые им объекты живыми при повороте экрана.
+    // by viewModels() - делегат, которые прячет за собой создание вьюмодели
+    private val medicationsViewModel: MedicationsViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
+        // как только данные поменяются, запустится эта строка
         medicationsViewModel.migration(this)
 
         setSupportActionBar(binding?.topMainMenu)
-
+        // запуск фрагмента Home (в данном случае он является фрагментом по умолчанию)
         supportFragmentManager.beginTransaction().replace(R.id.mainContent, Home()).commit()
 
+        // обработчик нажатий по вкладнкам
         binding?.bottomMainMenu?.setOnItemSelectedListener { item ->
 
             when(item.itemId) {
@@ -40,9 +44,7 @@ class MainActivity : AppCompatActivity() {
 
             return@setOnItemSelectedListener true
 
-
         }
         binding?.bottomMainMenu?.selectedItemId = R.id.homeBottomMainMenu
     }
-
 }

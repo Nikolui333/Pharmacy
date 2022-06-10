@@ -54,11 +54,6 @@ class OrderAdapter :
 
         }
 
-
-
-
-
-
     }
 
 }

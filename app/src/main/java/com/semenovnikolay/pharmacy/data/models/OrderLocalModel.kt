@@ -18,9 +18,11 @@ class OrderLocalModel (
     @ColumnInfo(name = "order_local_phoneUser")
     val phoneUser:String,
 
+    // описание заказа
     @ColumnInfo(name = "order_local_description")
     val description:String,
 
+    // общая цена
     @ColumnInfo(name = "order_local_totalPrice")
     val totalPrice:String
 )

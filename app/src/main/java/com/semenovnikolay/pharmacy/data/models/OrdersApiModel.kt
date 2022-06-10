@@ -15,3 +15,7 @@ data class OrdersApiModel (
     @SerializedName("priceOrder") @Expose
     var priceOrder: String? = null
 )
+
+
+
+

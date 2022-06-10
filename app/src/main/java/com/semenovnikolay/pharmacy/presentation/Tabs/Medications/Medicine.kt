@@ -24,8 +24,6 @@ class Medicine : Fragment() {
     private val medicationsViewModel: MedicationsViewModel by viewModel()
     private val cardViewModel: CardViewModel by viewModel()
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -38,9 +36,9 @@ class Medicine : Fragment() {
 
         return binding?.root
     }
-
+    // инициализация адаптера
     private fun initRecyclerMedications() {
-
+        // вертикальный макет recyclerView
         binding?.catalogMedications?.layoutManager =
             LinearLayoutManager(context)
         medicationsAdapter =
@@ -52,6 +50,7 @@ class Medicine : Fragment() {
                 removeFromCard(
                     medicationsModel
                 )
+                // отображение кнопок добавления или удаления товара
             }, { idProduct:Int, addToBasket: AppCompatImageButton,
                  removeFromBasket: AppCompatImageButton ->
                 loadMedicineToCardFromCardProduct(
@@ -63,32 +62,42 @@ class Medicine : Fragment() {
     }
 
     private fun loadMedicine() {
-
+        // получение всех необходимых данных для заполнения recyclerView
         medicationsViewModel.loadMedicines.observe(viewLifecycleOwner, Observer {
+            // setList наполняет адаптер данными
             medicationsAdapter?.setList(it)
+            // notifyDataSetChanged обновляет адаптер
             medicationsAdapter?.notifyDataSetChanged()
         })
 
 
     }
 
+    // добавление товара в корзину
     private fun addToCard(medicationsModel: MedicationsModel) {
-        cardViewModel.startInsert(medicationsModel.name, medicationsModel.image, medicationsModel.price, medicationsModel.id.toString(),
+        cardViewModel.startInsert(medicationsModel.name,
+            medicationsModel.image,
+            medicationsModel.price,
+            medicationsModel.id.toString(),
             "1")
     }
 
+    // удаление товара из корзины
     private fun removeFromCard(medicationsModel: MedicationsModel) {
         cardViewModel.deleteProductToCardFromCardProduct(medicationsModel.id.toString())
     }
 
+    // проверяем, есть ли товар в корзине и узнаём его колличество
     private fun loadMedicineToCardFromCardProduct (idProduct:Int, addToBasket: AppCompatImageButton,
                                                  removeFromBasket: AppCompatImageButton
     ){
-
+                                                        // передаём id, который приходит из адаптера
         cardViewModel.loadMedicineToCardFromCardProduct(idProduct.toString()).observe(viewLifecycleOwner, Observer {
 
+            // в переменную count получаем колличество товара
             val count = it.count()
 
+            // если колличество больше нуля, убрать кнопку добавления и отобразить кнопку удаления
             if (count>0) {
                 addToBasket.visibility = View.GONE
                 removeFromBasket.visibility = View.VISIBLE

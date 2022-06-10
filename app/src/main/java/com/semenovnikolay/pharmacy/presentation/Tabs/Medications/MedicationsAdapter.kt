@@ -50,8 +50,9 @@ class MedicationsAdapter (private val addToCard:(MedicationsModel)->Unit, privat
             removeFromCard: (MedicationsModel) -> Unit,
             loadMedicineToCardFromCardProduct: (Int, AppCompatImageButton, AppCompatImageButton) -> Unit
         ) {
-
+            // получаем ссылку на изображение
             val getImage = medicationsModel.image
+            // получаем изображение, которое находится по ссылке и добавляем его в imageMedications
             Picasso.get().load(getImage).into(binding.imageMedications)
             binding.nameMedications.text = medicationsModel.name
             binding.descriptionMedications.text = medicationsModel.description

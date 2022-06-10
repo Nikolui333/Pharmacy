@@ -3,6 +3,7 @@ package com.semenovnikolay.pharmacy.data.models
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
+// MedicationsApiModel идентична таблице базы данных на сервере
 data class MedicationsApiModel (
     @SerializedName("id") @Expose
     var id: Int? = null,
@@ -15,3 +16,4 @@ data class MedicationsApiModel (
     @SerializedName("price") @Expose
     var price: String? = null
 )
+

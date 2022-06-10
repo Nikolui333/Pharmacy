@@ -3,13 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/User/KotlinAndroidCours/Pharmacy/app/src/main/res/drawable-v24/backg_button.xml" value="0.124" />
+        <entry key="..\:/User/KotlinAndroidCours/Pharmacy/app/src/main/res/drawable-v24/card.xml" value="0.124" />
         <entry key="..\:/User/KotlinAndroidCours/Pharmacy/app/src/main/res/drawable-v24/delete.xml" value="0.187" />
         <entry key="..\:/User/KotlinAndroidCours/Pharmacy/app/src/main/res/drawable-v24/less.xml" value="0.123" />
+        <entry key="..\:/User/KotlinAndroidCours/Pharmacy/app/src/main/res/drawable-v24/line.xml" value="0.123" />
+        <entry key="..\:/User/KotlinAndroidCours/Pharmacy/app/src/main/res/drawable-v24/tabs.xml" value="0.123" />
         <entry key="..\:/User/KotlinAndroidCours/Pharmacy/app/src/main/res/drawable/shopping_cart.xml" value="0.187" />
         <entry key="..\:/User/KotlinAndroidCours/Pharmacy/app/src/main/res/layout/activity_main.xml" value="0.152" />
+        <entry key="..\:/User/KotlinAndroidCours/Pharmacy/app/src/main/res/layout/card_item.xml" value="0.1" />
         <entry key="..\:/User/KotlinAndroidCours/Pharmacy/app/src/main/res/layout/fragment_account.xml" value="0.11197916666666667" />
+        <entry key="..\:/User/KotlinAndroidCours/Pharmacy/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/User/KotlinAndroidCours/Pharmacy/app/src/main/res/layout/fragment_medicine.xml" value="0.1" />
         <entry key="..\:/User/KotlinAndroidCours/Pharmacy/app/src/main/res/layout/fragment_proposal_one.xml" value="0.11197916666666667" />
         <entry key="..\:/User/KotlinAndroidCours/Pharmacy/app/src/main/res/layout/fragment_proposal_two.xml" value="0.11197916666666667" />
+        <entry key="..\:/User/KotlinAndroidCours/Pharmacy/app/src/main/res/layout/medicines_item.xml" value="0.125" />
         <entry key="..\:/User/KotlinAndroidCours/Pharmacy/app/src/main/res/layout/order_item.xml" value="0.14375" />
         <entry key="..\:/User/KotlinAndroidCours/Pharmacy/app/src/main/res/layout/proposal_two.xml" value="0.14375" />
         <entry key="..\:/User/KotlinAndroidCours/Pharmacy/app/src/main/res/menu/bottom_menu.xml" value="0.14375" />

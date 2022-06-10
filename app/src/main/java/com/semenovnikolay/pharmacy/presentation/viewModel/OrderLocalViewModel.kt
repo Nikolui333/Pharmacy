@@ -9,7 +9,6 @@ import kotlinx.coroutines.launch
 
 class OrderLocalViewModel (private val orderLocalUseCase: OrderLocalUseCase): ViewModel() {
 
-
     fun startInsert(nameUser:String, phoneUser:String, description:String, totalPrice:String) {
         insert(
             OrderLocalModel(0, nameUser, phoneUser, description, totalPrice)
@@ -27,7 +26,5 @@ class OrderLocalViewModel (private val orderLocalUseCase: OrderLocalUseCase): Vi
 
         orderLocalUseCase.clear()
     }
-
-
 
 }
