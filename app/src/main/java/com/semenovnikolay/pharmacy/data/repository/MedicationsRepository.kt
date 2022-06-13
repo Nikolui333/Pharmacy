@@ -11,8 +11,6 @@ class MedicationsRepository (private val medicationsApiDataSource: MedicationsAp
                              private val medicationsDataSource: MedicationsDataSource
 ): MedicationsCall {
 
-   // val products = dao.loadPharmacy()
-
     // загрузка данных из локальной базы данных
     override fun loadMedicines(): LiveData<List<MedicationsModel>> {
         return medicationsDataSource.loadMedicines()    }

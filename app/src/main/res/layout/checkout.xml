@@ -47,7 +47,7 @@
                 app:startIconTint="@android:color/white"
                 app:endIconTint="@android:color/holo_red_light"
                 app:boxStrokeColor="@android:color/black"
-                android:hint="@string/yourName"
+                android:hint="@string/yourPhone"
                 app:hintTextColor="@android:color/black"
                 app:endIconMode="clear_text"
                 app:boxStrokeWidthFocused="4dp">

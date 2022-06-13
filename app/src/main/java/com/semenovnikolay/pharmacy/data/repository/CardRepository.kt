@@ -14,8 +14,6 @@ import kotlinx.coroutines.launch
 
 class CardRepository (private val dao: CardDao): CardCall {
 
-    //val products = dao.loadMedicine()
-
     override suspend fun insert(cardModel: CardModel) {
        dao.insert(cardModel)    }
 

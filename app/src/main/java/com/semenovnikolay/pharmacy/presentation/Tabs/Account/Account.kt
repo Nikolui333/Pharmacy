@@ -15,6 +15,7 @@ import com.semenovnikolay.pharmacy.databinding.FragmentAccountBinding
 
 
 class Account : Fragment() {
+
     private var binding: FragmentAccountBinding? = null
 
     private var orderAdapter: OrderAdapter? = null
@@ -38,7 +39,6 @@ class Account : Fragment() {
         return binding?.root
     }
 
-
     private fun initRecyclerOrder() {
 
         binding?.listOrders?.layoutManager =
@@ -56,7 +56,5 @@ class Account : Fragment() {
             orderAdapter?.notifyDataSetChanged()
 
         })
-
-
     }
 }

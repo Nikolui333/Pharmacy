@@ -11,7 +11,6 @@ class ApiClient private constructor() {
             ApiInterface::class.java)
 
     init {
-
         retrofit =
             Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create())
                 .build()

@@ -23,8 +23,7 @@ class MedicationsApiDataSourceIMPL (private val medicationsDataSource: Medicatio
                 call: Call<ArrayList<MedicationsApiModel>>,
                 response: Response<ArrayList<MedicationsApiModel>>
             ) {
-
-                // создаём массив
+                // создаём список
                 var loadMedicines: ArrayList<MedicationsApiModel>? = null
                 // очищаем массив
                 loadMedicines?.clear()
@@ -51,8 +50,6 @@ class MedicationsApiDataSourceIMPL (private val medicationsDataSource: Medicatio
                 }
 
                 Toast.makeText(context, "ЗАГРУЗКА", Toast.LENGTH_SHORT).show()
-
-
             }
 
             override fun onFailure(call: Call<ArrayList<MedicationsApiModel>>, t: Throwable) {

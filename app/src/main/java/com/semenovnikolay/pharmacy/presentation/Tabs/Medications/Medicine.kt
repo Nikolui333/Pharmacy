@@ -69,8 +69,6 @@ class Medicine : Fragment() {
             // notifyDataSetChanged обновляет адаптер
             medicationsAdapter?.notifyDataSetChanged()
         })
-
-
     }
 
     // добавление товара в корзину

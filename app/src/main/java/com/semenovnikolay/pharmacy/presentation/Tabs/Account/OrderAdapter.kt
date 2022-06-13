@@ -20,26 +20,18 @@ class OrderAdapter :
             DataBindingUtil.inflate(layoutInflater, R.layout.order_item, parent, false)
         return CheckoutHolder(binding)
     }
-
     override fun getItemCount(): Int {
         return orders.size
     }
-
-
-
     override fun onBindViewHolder(holder: CheckoutHolder, position: Int) {
         holder.bind(orders[position])
 
     }
-
     fun setList(orderList: List<OrderLocalModel>) {
         orders.clear()
         orders.addAll(orderList)
 
     }
-
-
-
     class CheckoutHolder(val binding: OrderItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
 
@@ -51,9 +43,6 @@ class OrderAdapter :
             binding.phoneUserCheckout.text = orderModel.phoneUser
             binding.descriptionCheckout.text = orderModel.description
             binding.totalPriceCheckout.text = orderModel.totalPrice
-
         }
-
     }
-
 }

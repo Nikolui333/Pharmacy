@@ -39,7 +39,6 @@ class MedicationsAdapter (private val addToCard:(MedicationsModel)->Unit, privat
     fun setList(medicationsList: List<MedicationsModel>) {
         medications.clear()
         medications.addAll(medicationsList)
-
     }
 
     class MedicationsHolder(val binding: MedicinesItemBinding) : RecyclerView.ViewHolder(binding.root) {

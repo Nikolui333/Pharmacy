@@ -25,20 +25,18 @@ class Checkout : BottomSheetDialogFragment() {
     // viewModel, который отвечает за отправку данных на сервер
     private val orderApiViewModel: OrderApiViewModel by viewModel()
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         binding = DataBindingUtil.inflate(inflater, R.layout.checkout, container, false)
-
         binding?.submitCheckout?.setOnClickListener(View.OnClickListener {
 
             cardViewModel.loadMedicineFromCard.observe(viewLifecycleOwner, Observer {
                 // сумма за весь заказ
                 val totalOrder:Int = it.sumOf<CardModel> { it.totalPrice.toInt() }
-                // заполнение данных для истории покупок                                                                    // joinToString нужно чтобы выводить массив без квадратных скобок
+                // заполнение данных для истории покупок
+                // joinToString нужно чтобы выводить массив без квадратных скобок
                 val descriptionOrder = it.map { it.name + ": count - " + it.count + ", price - " + it.totalPrice + " R; " }.joinToString("")
 
                 // запись данных в локальную базу данных
@@ -61,10 +59,7 @@ class Checkout : BottomSheetDialogFragment() {
                 cardViewModel.clearCard()
 
             })
-
-
         })
-
         return binding?.root
     }
 

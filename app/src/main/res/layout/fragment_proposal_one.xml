@@ -39,8 +39,9 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         android:layout_margin="10dp"
+                        android:textSize="15dp"
                         android:text="@string/salePropOne"
-                        android:textColor="@android:color/holo_red_dark"/>
+                        android:textColor="@color/orange"/>
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/propOneHeader"
@@ -50,8 +51,9 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         android:layout_margin="10dp"
+                        android:textSize="15dp"
                         android:text="@string/headerPropOne"
-                        android:textColor="@color/orange"/>
+                        android:textColor="#F83324"/>
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
@@ -60,6 +62,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         android:layout_margin="10dp"
+                        android:textSize="15dp"
                         android:text="@string/descriptionProposal"
                         android:gravity="center_horizontal"
                         android:textColor="@color/white"/>

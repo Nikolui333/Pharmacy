@@ -29,8 +29,6 @@ class CardAdapter  (private val deleteFromCard:(CardModel)->Unit, private val le
         return productsFromCard.size
     }
 
-
-
     override fun onBindViewHolder(holder: CardHolder, position: Int) {
         holder.bind(productsFromCard[position], deleteFromCard,
         moreCount, lessCount)
@@ -71,9 +69,6 @@ class CardAdapter  (private val deleteFromCard:(CardModel)->Unit, private val le
                 lessCount(cardModel) // уменьшить колличество единиц товара
 
             })
-
         }
-
     }
-
 }

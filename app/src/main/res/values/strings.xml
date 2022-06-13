@@ -1,25 +1,25 @@
 <resources>
-    <string name="app_name">Pharmacy</string>
+    <string name="app_name">Альянс-Фарм</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="home">HOME</string>
-    <string name="medical_services">MEDICAL</string>
-    <string name="shopping_cart">CARD</string>
-    <string name="account">ACCOUNT</string>
+    <string name="home">ДОМОЙ</string>
+    <string name="medical_services">ЛЕКАРСТВА</string>
+    <string name="shopping_cart">КОРЗИНА</string>
+    <string name="account">ИСТОРИЯ</string>
 
     <string name="ruble">Р</string>
-    <string name="clearCard">CLEAR CARD</string>
-    <string name="clearOrders">CLEAR ORDERS</string>
-    <string name="checkout">CHECKOUT</string>
-    <string name="totalOrder">TOTAL:</string>
-    <string name="yourName">Your Name</string>
-    <string name="yourPhone">Your Phone</string>
-    <string name="submit">SUBMIT</string>
-    <string name="mainHeader">Pharmacy Alliance Pharm</string>
+        <string name="clearCard">ОЧИСТИТЬ КОРЗИНУ</string>
+    <string name="clearOrders">ОЧИСТИТЬ ИСТОРИЮ</string>
+    <string name="checkout">ЗАКАЗАТЬ</string>
+    <string name="totalOrder">ИТОГО:</string>
+    <string name="yourName">Ваше имя</string>
+    <string name="yourPhone">Ваш телефон</string>
+    <string name="submit">ОТПРАВИТЬ</string>
+    <string name="mainHeader">Альянс-Фарм</string>
     <string name="descriptionPharmacy">We care about your health</string>
-    <string name="salePropOne">Sale - 10 % </string>
-    <string name="salePropTwo">Sale - 15 % </string>
-    <string name="headerPropOne">Teraflex 60 pcs. capsules</string>
-    <string name="headerPropTwo">Artra 500 mg</string>
-    <string name="descriptionProposal">The promotion is valid when ordering from 8 to 10 am</string>
+    <string name="salePropOne">3 по цене 2</string>
+    <string name="salePropTwo">скидка - 10 % </string>
+    <string name="headerPropOne">Терафлекс 3 пачки по цене 2</string>
+    <string name="headerPropTwo">10% скидка на лекарства для пенсионеров</string>
+    <string name="descriptionProposal">Акция действует при заказе с 8 до 10 утра</string>
 </resources>

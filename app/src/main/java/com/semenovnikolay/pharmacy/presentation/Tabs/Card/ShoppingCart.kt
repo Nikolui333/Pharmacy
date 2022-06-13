@@ -28,8 +28,6 @@ class ShoppingCart : Fragment(),View.OnClickListener {
     ): View? {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shopping_cart, container, false)
-
-
         initRecyclerCard()
         loadMedicineFromCard()
 
@@ -61,7 +59,6 @@ class ShoppingCart : Fragment(),View.OnClickListener {
                 )
             })
         binding?.listCard?.adapter = cardAdapter
-
     }
 
     // загрузка всех товаров из корзины
@@ -77,10 +74,7 @@ class ShoppingCart : Fragment(),View.OnClickListener {
 
             binding?.totalOrder?.text = total.toString()
 
-
         })
-
-
     }
 
     private fun deleteFromCard(cardModel: CardModel){
@@ -108,7 +102,6 @@ class ShoppingCart : Fragment(),View.OnClickListener {
 
         var count: Int = cardModel.count.toInt()
         count--
-
         if (count<1) { // если count<1 вывести 1
             cardViewModel.updateProductToCard(
                 CardModel(cardModel.id, cardModel.name,
@@ -128,7 +121,6 @@ class ShoppingCart : Fragment(),View.OnClickListener {
 
         }
     }
-
     // увеличение колличества единиц товара
     private fun moreCount(cardModel:CardModel) {
 
@@ -141,6 +133,5 @@ class ShoppingCart : Fragment(),View.OnClickListener {
                 cardModel.image, cardModel.price, cardModel.idProduct, count.toString(),
                 (cardModel.price.toInt()*count).toString())
         )
-
     }
 }
