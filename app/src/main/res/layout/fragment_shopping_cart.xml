@@ -20,7 +20,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_margin = "20dp"
-                android:background="@color/orange"
+                android:background="@color/green"
                 android:textColor="@color/black"
                 android:text="@string/clearCard"/>
 
@@ -41,7 +41,7 @@
                 android:layout_margin="10dp"
                 android:layout_marginRight="10dp"
                 android:text="@string/totalOrder"
-                android:textColor="@color/orange"/>
+                android:textColor="@android:color/holo_green_dark"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/totalOrder"
@@ -51,7 +51,7 @@
                 app:layout_constraintRight_toLeftOf="@id/currTotalOrder"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:textColor="@color/orange"/>
+                android:textColor="@android:color/holo_green_dark"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/currTotalOrder"
@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:textColor="@color/orange"
+                android:textColor="@android:color/holo_green_dark"
                 android:text="@string/ruble"
                 app:layout_constraintTop_toBottomOf="@id/listCard"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -70,7 +70,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginBottom="60dp"
-                android:background="@color/orange"
+                android:background="@android:color/holo_green_dark"
                 android:textColor="@color/black"
                 android:text="@string/checkout"/>
 

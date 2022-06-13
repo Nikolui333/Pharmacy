@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginBottom="60dp"
-                android:background="@color/orange"
+                android:background="@android:color/holo_green_dark"
                 android:textColor="@color/black"
                 android:text="@string/clearOrders"/>
 

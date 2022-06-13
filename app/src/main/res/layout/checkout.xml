@@ -33,7 +33,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="text"
                     android:textColor="@android:color/black"
-                    app:backgroundTint="@android:color/holo_orange_dark"/>
+                    app:backgroundTint="@android:color/holo_green_dark"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -58,7 +58,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="phone"
                     android:textColor="@android:color/black"
-                    app:backgroundTint="@android:color/holo_orange_dark"/>
+                    app:backgroundTint="@android:color/holo_green_dark"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -70,7 +70,7 @@
                 app:layout_constraintTop_toBottomOf="@id/layoutEnterPhoneCheckout"
                 android:layout_marginTop="20dp"
                 android:text="@string/submit"
-                android:background="@color/orange"
+                android:background="@color/green"
                 android:textColor="@color/black"/>
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/submitCheckout"
                 app:layout_constraintStart_toStartOf="parent"
-                android:textColor="@color/orange"/>
+                android:textColor="@color/green"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

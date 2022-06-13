@@ -37,7 +37,7 @@ class Checkout : BottomSheetDialogFragment() {
                 val totalOrder:Int = it.sumOf<CardModel> { it.totalPrice.toInt() }
                 // заполнение данных для истории покупок
                 // joinToString нужно чтобы выводить массив без квадратных скобок
-                val descriptionOrder = it.map { it.name + ": count - " + it.count + ", price - " + it.totalPrice + " R; " }.joinToString("")
+                val descriptionOrder = it.map { it.name + ": количество - " + it.count + ", цена - " + it.totalPrice + " р; " }.joinToString("")
 
                 // запись данных в локальную базу данных
                 orderLocalViewModel.startInsert(binding?.enterNameCheckout?.text.toString(),
