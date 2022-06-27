@@ -61,12 +61,8 @@
                 app:tabBackground="@drawable/tabs"
                 app:tabIndicatorHeight="0dp"/>
 
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
     </FrameLayout>
-
 
 </layout>

@@ -79,7 +79,7 @@ dependencies {
 
     // Koin main features for Android (Scope,ViewModel ...)
     implementation "io.insert-koin:koin-android:$koin_version"
-// Koin Java Compatibility
+    // Koin Java Compatibility
     implementation "io.insert-koin:koin-android-compat:$koin_version"
 
     implementation "com.squareup.picasso:picasso:$picasso"

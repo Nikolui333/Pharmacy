@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Альянс-Фарм</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -8,7 +8,7 @@
     <string name="account">ИСТОРИЯ</string>
 
     <string name="ruble">Р</string>
-        <string name="clearCard">ОЧИСТИТЬ КОРЗИНУ</string>
+    <string name="clearCard">ОЧИСТИТЬ КОРЗИНУ</string>
     <string name="clearOrders">ОЧИСТИТЬ ИСТОРИЮ</string>
     <string name="checkout">ЗАКАЗАТЬ</string>
     <string name="totalOrder">ИТОГО:</string>
@@ -17,9 +17,9 @@
     <string name="submit">ОТПРАВИТЬ</string>
     <string name="mainHeader">Альянс-Фарм</string>
     <string name="descriptionPharmacy">We care about your health</string>
-    <string name="salePropOne">3 по цене 2</string>
-    <string name="salePropTwo">скидка - 10 % </string>
-    <string name="headerPropOne">Терафлекс 3 пачки по цене 2</string>
-    <string name="headerPropTwo">10% скидка на лекарства для пенсионеров</string>
-    <string name="descriptionProposal">Акция действует при заказе с 8 до 10 утра</string>
+    <string name="salePropOne">Телефон</string>
+    <string name="salePropTwo">Адрес</string>
+    <string name="headerPropOne" tools:ignore="TypographyDashes">8 (495) 327-32-15</string>
+    <string name="headerPropTwo" tools:ignore="TypographyDashes">Запрудня, ул. Первомайская, д. 6, помещения 34-42</string>
+    <string name="descriptionProposal">Альянс-Фарм</string>
 </resources>
